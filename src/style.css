@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/* General styles */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: "Roboto";
+    margin: 0;
+    height: 100%;
+}
+
+/* Layout */
+
+.content{
+    display: grid;
+    grid-template-rows: 1fr 2fr 50px;
+    height: 100%;
+}
+
+header{
+    background-image: url("./img/pizza.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    background-color: steelblue;
+}
+
+footer{
+    background-color: goldenrod;
+}
