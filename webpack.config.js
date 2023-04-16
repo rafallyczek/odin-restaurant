@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -11,6 +12,7 @@ module.exports = {
     clean: true,
   },
   plugins: [ 
+    new MiniCssExtractPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
@@ -29,6 +31,21 @@ module.exports = {
           filename: "img/[hash][ext][query]",
         },
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin({
+        test: /\.css$/i,
+        minimizerOptions: {
+          preset: [
+            "default",
+            {
+              discardComments: { removeAll: true }
+            },
+          ],
+        },
+      }),
     ],
   },
 };
