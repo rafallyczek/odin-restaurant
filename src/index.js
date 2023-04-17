@@ -1,61 +1,5 @@
 import "./style.css";
 
-function footer() {
-  const footer = document.createElement("footer");
-  footer.classList.add("bgc-dark");
-  footer.classList.add("text-center");
-
-  const author = document.createElement("p");
-  let text = document.createTextNode("Page made by ");
-  let link = document.createElement("a");
-  link.textContent = "rafallyczek";
-  link.href = "https://github.com/rafallyczek";
-  link.target = "_blank";
-
-  author.appendChild(text);
-  author.appendChild(link);
-
-  text = document.createTextNode(" while working with ");
-  link = document.createElement("a");
-  link.textContent = "The Odin Project";
-  link.href = "https://www.theodinproject.com/";
-  link.target = "_blank";
-
-  author.appendChild(text);
-  author.appendChild(link);
-
-  const photo = document.createElement("p");
-  link = document.createElement("a");
-  link.textContent = "Photo";
-  link.href = "https://unsplash.com/photos/MQUqbmszGGM";
-  link.target = "_blank";
-  text = document.createTextNode(" by ");
-
-  photo.appendChild(link);
-  photo.appendChild(text);
-
-  link = document.createElement("a");
-  link.textContent = "Ivan Torres";
-  link.href = "https://unsplash.com/@iavnt";
-  link.target = "_blank";
-  text = document.createTextNode(" at ");
-
-  photo.appendChild(link);
-  photo.appendChild(text);
-
-  link = document.createElement("a");
-  link.textContent = "Unsplash";
-  link.href = "https://unsplash.com/";
-  link.target = "_blank";
-
-  photo.appendChild(link);
-
-  footer.appendChild(photo);
-  footer.appendChild(author);
-
-  return footer;
-}
-
 function content() {
   const content = document.querySelector(".content");
 
@@ -72,6 +16,56 @@ function content() {
 
   content.appendChild(header);
   content.appendChild(mainContainer);
+}
+
+function footer() {
+  const footer = document.createElement("footer");
+  footer.classList.add("bgc-dark");
+  footer.classList.add("text-center");
+
+  const author = document.createElement("p");
+  const photo = document.createElement("p");
+
+  //Paragraph with page author information
+  author.appendChild(createTextNode("Page made by "));
+  author.appendChild(
+    createHyperlink("rafallyczek", "https://github.com/rafallyczek", true)
+  );
+  author.appendChild(createTextNode(" while working with "));
+  author.appendChild(
+    createHyperlink("The Odin Project", "https://www.theodinproject.com/", true)
+  );
+
+  //Paragraph with photo information
+  photo.appendChild(
+    createHyperlink("Photo", "https://unsplash.com/photos/MQUqbmszGGM", true)
+  );
+  photo.appendChild(createTextNode(" by "));
+  photo.appendChild(
+    createHyperlink("Ivan Torres", "https://unsplash.com/@iavnt", true)
+  );
+  photo.appendChild(createTextNode(" at "));
+  photo.appendChild(createHyperlink("Unsplash", "https://unsplash.com/", true));
+
+  footer.appendChild(photo);
+  footer.appendChild(author);
+
+  return footer;
+}
+
+// Utility functions
+
+function createHyperlink(text, href, target) {
+  const hyperlink = document.createElement("a");
+  hyperlink.textContent = text;
+  hyperlink.href = href;
+  if (target) hyperlink.target = "_blank";
+  return hyperlink;
+}
+
+function createTextNode(text) {
+  const textNode = document.createTextNode(text);
+  return textNode;
 }
 
 content();
