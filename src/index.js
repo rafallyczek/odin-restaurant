@@ -25,6 +25,14 @@ function header() {
 
   header.appendChild(title);
 
+  const navigation = document.createElement("ul");
+  navigation.classList.add("nav");
+  navigation.appendChild(createListItem("Home"));
+  navigation.appendChild(createListItem("Menu"));
+  navigation.appendChild(createListItem("Contact"));
+
+  header.appendChild(navigation);
+
   return header;
 }
 
@@ -76,6 +84,12 @@ function createHyperlink(text, href, target) {
 function createTextNode(text) {
   const textNode = document.createTextNode(text);
   return textNode;
+}
+
+function createListItem(text) {
+  const listItem = document.createElement("li");
+  listItem.textContent = text;
+  return listItem;
 }
 
 content();

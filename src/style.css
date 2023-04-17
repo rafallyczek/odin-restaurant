@@ -12,7 +12,7 @@
   --clr-dark: hsl(0, 0%, 20%);
   --clr-light: hsl(0, 0%, 98%);
 
-  --fs-large: 3rem;
+  --fs-large: 2rem;
 }
 
 body,
@@ -32,17 +32,25 @@ a {
   color: inherit;
 }
 
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 /* Layout */
 
 .content {
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 70px 1fr;
   height: 100%;
 }
 
 header {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .main {
@@ -57,6 +65,11 @@ header {
 footer {
   display: grid;
   place-content: center;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Utility classes */
