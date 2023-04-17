@@ -8,31 +8,55 @@
   box-sizing: border-box;
 }
 
+:root {
+  --clr-dark: hsl(0, 0%, 20%);
+  --clr-light: hsl(0, 0%, 98%);
+}
+
 body,
 html {
-    font-family: "Roboto";
-    margin: 0;
-    height: 100%;
+  font-family: "Roboto";
+  margin: 0;
+  height: 100%;
+}
+
+p,
+a {
+  color: var(--clr-light);
+}
+
+p {
+  margin: 0;
 }
 
 /* Layout */
 
-.content{
-    display: grid;
-    grid-template-rows: 1fr 2fr 50px;
-    height: 100%;
+.content {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  height: 100%;
 }
 
-header{
-    background-image: url("./img/pizza.jpg");
-    background-size: cover;
-    background-position: center;
+.main {
+  --clr-dark: hsla(0, 0%, 20%, 0.6);
+  display: grid;
+  grid-template-rows: 1fr 50px;
+  background-image: url("./img/pizza.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-main{
-    background-color: steelblue;
+footer {
+  display: grid;
+  place-content: center;
 }
 
-footer{
-    background-color: goldenrod;
+/* Utility classes */
+
+.bgc-dark {
+  background-color: var(--clr-dark);
+}
+
+.text-center {
+  text-align: center;
 }
