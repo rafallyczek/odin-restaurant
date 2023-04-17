@@ -24,7 +24,8 @@ html {
 }
 
 p,
-h1 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -32,10 +33,10 @@ a {
   color: inherit;
 }
 
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Layout */
@@ -54,7 +55,7 @@ header {
 }
 
 .main {
-  --clr-dark: hsla(0, 0%, 20%, 0.6);
+  --clr-dark: hsla(0, 0%, 20%, 0.8);
   display: grid;
   grid-template-rows: 1fr 50px;
   background-image: url("./img/pizza.jpg");
@@ -62,14 +63,28 @@ header {
   background-position: center;
 }
 
+main{
+    display: grid;
+    justify-items: center;
+}
+
 footer {
   display: grid;
   place-content: center;
 }
 
-.nav{
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.welcome{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+    border-radius: 5px;
+    width: min(700px, 100% - 1rem);
+    margin: 100px 0 auto 0;
 }
 
 /* Utility classes */

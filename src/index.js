@@ -6,36 +6,59 @@ function content() {
   const mainContainer = document.createElement("div");
   mainContainer.classList.add("main");
 
-  const main = document.createElement("main");
-
-  mainContainer.appendChild(main);
+  mainContainer.appendChild(main());
   mainContainer.appendChild(footer());
 
   content.appendChild(header());
   content.appendChild(mainContainer);
 }
 
+//Creates header content
 function header() {
   const header = document.createElement("header");
   header.classList.add("bgc-dark");
 
   const title = document.createElement("h1");
   title.classList.add("fs-large");
-  title.textContent = "Restaurant";
+  title.textContent = "Superb Restaurant";
 
   header.appendChild(title);
 
   const navigation = document.createElement("ul");
   navigation.classList.add("nav");
-  navigation.appendChild(createListItem("Home"));
-  navigation.appendChild(createListItem("Menu"));
-  navigation.appendChild(createListItem("Contact"));
+  navigation.appendChild(createListItem(createTextNode("Home")));
+  navigation.appendChild(createListItem(createTextNode("Menu")));
+  navigation.appendChild(createListItem(createTextNode("Contact")));
 
   header.appendChild(navigation);
 
   return header;
 }
 
+//Creates main content
+function main() {
+  const main = document.createElement("main");
+
+  const welcome = document.createElement("div");
+  welcome.classList.add("welcome");
+  welcome.classList.add("bgc-dark");
+
+  const title = document.createElement("h2");
+  title.textContent = "Welcome to Superb Restuarant!";
+  title.classList.add("text-center");
+
+  const message = document.createElement("p");
+  message.textContent = "The Superb Restaurant is best restaurant in existence. When You try our meals, no other food will be ever needed again. Check out our Menu and order via phone number visible in Contact tab.";
+
+  welcome.appendChild(title);
+  welcome.appendChild(message);
+
+  main.appendChild(welcome);
+
+  return main;
+}
+
+//Creates footer content
 function footer() {
   const footer = document.createElement("footer");
   footer.classList.add("bgc-dark");
@@ -86,9 +109,9 @@ function createTextNode(text) {
   return textNode;
 }
 
-function createListItem(text) {
+function createListItem(element) {
   const listItem = document.createElement("li");
-  listItem.textContent = text;
+  listItem.appendChild(element);
   return listItem;
 }
 
