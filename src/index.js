@@ -3,9 +3,6 @@ import "./style.css";
 function content() {
   const content = document.querySelector(".content");
 
-  const header = document.createElement("header");
-  header.classList.add("bgc-dark");
-
   const mainContainer = document.createElement("div");
   mainContainer.classList.add("main");
 
@@ -14,8 +11,21 @@ function content() {
   mainContainer.appendChild(main);
   mainContainer.appendChild(footer());
 
-  content.appendChild(header);
+  content.appendChild(header());
   content.appendChild(mainContainer);
+}
+
+function header() {
+  const header = document.createElement("header");
+  header.classList.add("bgc-dark");
+
+  const title = document.createElement("h1");
+  title.classList.add("fs-large");
+  title.textContent = "Restaurant";
+
+  header.appendChild(title);
+
+  return header;
 }
 
 function footer() {

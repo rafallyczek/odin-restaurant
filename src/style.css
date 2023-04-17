@@ -11,6 +11,8 @@
 :root {
   --clr-dark: hsl(0, 0%, 20%);
   --clr-light: hsl(0, 0%, 98%);
+
+  --fs-large: 3rem;
 }
 
 body,
@@ -18,15 +20,16 @@ html {
   font-family: "Roboto";
   margin: 0;
   height: 100%;
-}
-
-p,
-a {
   color: var(--clr-light);
 }
 
-p {
+p,
+h1 {
   margin: 0;
+}
+
+a {
+  color: inherit;
 }
 
 /* Layout */
@@ -35,6 +38,11 @@ p {
   display: grid;
   grid-template-rows: 100px 1fr;
   height: 100%;
+}
+
+header {
+  display: grid;
+  place-items: center;
 }
 
 .main {
@@ -59,4 +67,8 @@ footer {
 
 .text-center {
   text-align: center;
+}
+
+.fs-large {
+  font-size: var(--fs-large);
 }
