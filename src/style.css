@@ -65,6 +65,7 @@ header {
   background-image: url("./img/pizza.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 main{
