@@ -30,9 +30,9 @@ function header() {
 
   const navigation = document.createElement("ul");
   navigation.classList.add("nav");
-  navigation.appendChild(createListItem(createTextNode("Home")));
-  navigation.appendChild(createListItem(createTextNode("Menu")));
-  navigation.appendChild(createListItem(createTextNode("Contact")));
+  navigation.appendChild(createListItem(createTextNode("Home"), "home"));
+  navigation.appendChild(createListItem(createTextNode("Menu"), "menu"));
+  navigation.appendChild(createListItem(createTextNode("Contact"), "contact"));
 
   header.appendChild(navigation);
 
@@ -73,4 +73,9 @@ function footer() {
   footer.appendChild(author);
 
   return footer;
+}
+
+export function clear(){
+  const main = document.querySelector("main");
+  main.textContent = "";
 }

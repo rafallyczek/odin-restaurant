@@ -11,6 +11,7 @@
 :root {
   --clr-dark: hsl(0, 0%, 20%);
   --clr-light: hsl(0, 0%, 98%);
+  --clr-light-medium: hsl(0, 0%, 90%);
 
   --fs-large: 2rem;
 }
@@ -31,12 +32,6 @@ h2 {
 
 a {
   color: inherit;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 /* Layout */
@@ -78,13 +73,29 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.welcome{
+.mainContentDiv{
     display: grid;
     gap: 15px;
     padding: 30px;
     border-radius: 5px;
     width: min(700px, 100% - 1rem);
     margin: 100px 0 auto 0;
+}
+
+/* Lists */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  cursor: pointer;
+}
+
+li:hover{
+  color: var(--clr-light-medium);
 }
 
 /* Utility classes */

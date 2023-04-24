@@ -11,8 +11,24 @@ export function createTextNode(text) {
   return textNode;
 }
 
-export function createListItem(element) {
+export function createListItem(element, id) {
   const listItem = document.createElement("li");
+  listItem.setAttribute("id", id);
   listItem.appendChild(element);
   return listItem;
+}
+
+export function activateTab(tab) {
+  _deactivateTabs();
+  tab.classList.add("active");
+}
+
+function _deactivateTabs() {
+  const tabs = Array.from(document.querySelectorAll("li"));
+  for (let i = 0; i < tabs.length; i++) {
+    if (tabs[i].classList.contains("active")) {
+      tabs[i].classList.remove("active");
+      break;
+    }
+  }
 }
