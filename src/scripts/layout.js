@@ -75,6 +75,7 @@ function footer() {
   return footer;
 }
 
+//Clears content of main
 export function clear(){
   const main = document.querySelector("main");
   main.textContent = "";

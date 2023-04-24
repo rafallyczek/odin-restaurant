@@ -5,7 +5,7 @@ export function home() {
   const main = document.querySelector("main");
 
   const mainContentDiv = document.createElement("div");
-  mainContentDiv.classList.add("mainContentDiv");
+  mainContentDiv.classList.add("main-content-div");
   mainContentDiv.classList.add("bgc-dark");
 
   const title = document.createElement("h2");

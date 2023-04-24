@@ -13,7 +13,12 @@
   --clr-light: hsl(0, 0%, 98%);
   --clr-light-medium: hsl(0, 0%, 90%);
 
+  --clr-primary: hsl(30, 91%, 50%);
+
   --fs-large: 2rem;
+  --fs-medium: 1.3rem;
+
+  --fw-600: 600;
 }
 
 body,
@@ -32,6 +37,10 @@ h2 {
 
 a {
   color: inherit;
+}
+
+a:hover{
+  color: var(--clr-light-medium);
 }
 
 /* Layout */
@@ -61,6 +70,7 @@ header {
 main{
     display: grid;
     justify-items: center;
+    padding-block: 100px;
 }
 
 footer {
@@ -73,13 +83,25 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.mainContentDiv{
+.main-content-div{
     display: grid;
     gap: 15px;
     padding: 30px;
     border-radius: 5px;
-    width: min(700px, 100% - 1rem);
-    margin: 100px 0 auto 0;
+    width: min(800px, 100% - 1rem);
+    margin-bottom: auto;
+}
+
+.menu-item{
+  display: grid;
+  gap: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--clr-light);
+}
+
+.menu-item:first-of-type{
+  padding-top: 10px;
+  border-top: 1px solid var(--clr-light);
 }
 
 /* Lists */
@@ -110,4 +132,16 @@ li:hover{
 
 .fs-large {
   font-size: var(--fs-large);
+}
+
+.fs-medium{
+  font-size: var(--fs-medium);
+}
+
+.text-clr-primary{
+  color: var(--clr-primary);
+}
+
+.fw-600{
+  font-weight: 600;
 }
