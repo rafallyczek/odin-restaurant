@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: [ 
     new MiniCssExtractPlugin(),
-    new MiniCssExtractPlugin(),
+    new CssMinimizerPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     })
